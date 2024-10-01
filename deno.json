@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "solid-js",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext",
+      "deno.ns"
+    ]
+  },
+  "nodeModulesDir": "auto",
+  "fmt": {
+    "options": {
+      "indentWidth": 2,
+      "lineWidth": 120,
+      "semiColons": true
+    }
+  },
+  "imports": {
+    "vite": "npm:vite@5.4.8"
+  },
+  "workspace": {
+    "members": [
+      "workspace/apps/examples",
+      "workspace/libs/lib-a",
+      "workspace/libs/lib-b",
+      "workspace/libs/lib-ab"
+    ]
+  },
+  "tasks": {
+    "dev": "cd workspace/apps/examples && deno task dev",
+    "test": "deno test -A --watch"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "deno run --allow-net --allow-read jsr:@std/http/file-server dist/",
+    "test": "deno test -RW",
+    "lint": "deno lint",
+    "dry": "deno publish --allow-dirty --dry-run"
+  },
+  "imports": {
+    "solid-js": "npm:solid-js@1.9.1",
+    "vite-plugin-solid": "npm:vite-plugin-solid@2.1.0"
+  }
+}
