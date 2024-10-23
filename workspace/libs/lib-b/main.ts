@@ -1,3 +1,3 @@
-export const bar = () => {
+export const bar = (): string => {
   return "bar";
 };

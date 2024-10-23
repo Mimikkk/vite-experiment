@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "strict": true,
-    "jsx": "react-jsx",
+    "jsx": "precompile",
     "jsxImportSource": "solid-js",
     "lib": [
       "DOM",
@@ -19,7 +19,7 @@
     }
   },
   "imports": {
-    "vite": "npm:vite@5.4.8"
+    "vite": "npm:vite@5.4.10"
   },
   "workspace": {
     "members": [
@@ -31,6 +31,10 @@
   },
   "tasks": {
     "dev": "cd workspace/apps/examples && deno task dev",
-    "test": "deno test -A --watch"
+    "build": "cd workspace/apps/examples && deno task build",
+    "preview": "cd workspace/apps/examples && deno task preview",
+    "serve": "cd workspace/apps/examples && deno task serve",
+    "test": "deno test -A --watch",
+    "build-packages": "cd scripts && deno run -A build-packages.ts"
   }
 }

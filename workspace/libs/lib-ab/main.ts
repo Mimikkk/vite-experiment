@@ -1,5 +1,5 @@
 import { foo } from "@mimi/lib-a";
 import { bar } from "@mimi/lib-b";
-export const foobar = () => {
+export const foobar = (): string => {
   return foo() + bar();
 };

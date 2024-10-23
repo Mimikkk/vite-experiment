@@ -1,5 +1,7 @@
-**/.vite
 **/node_modules
 **/dist
 **/build
 **/.vscode
+**/.vite
+**/.idea
+**/.env

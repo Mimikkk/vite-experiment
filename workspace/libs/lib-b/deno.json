@@ -1,5 +1,6 @@
 {
     "name": "@mimi/lib-b",
     "version": "0.0.1",
-    "exports": "./main.ts"
+    "exports": "./main.ts",
+    "license": "MIT"
 }

@@ -1,5 +1,5 @@
 import { dirname, fromFileUrl, resolve } from "jsr:@std/path";
-import type { AliasOptions, ResolverFunction } from "npm:vite";
+import type { AliasOptions, ResolverFunction } from "vite";
 import {
   dependencies,
   type LibraryName,
