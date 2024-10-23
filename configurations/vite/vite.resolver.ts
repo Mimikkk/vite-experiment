@@ -1,10 +1,10 @@
 import { dirname, fromFileUrl, resolve } from "jsr:@std/path";
-import type { AliasOptions, ResolverFunction } from "vite";
+import type { AliasOptions, ResolverFunction } from "npm:vite";
 import {
   dependencies,
   type LibraryName,
   path,
-} from "../library/libraries.resolver.ts";
+} from "../library/libraries.config.ts";
 
 export const resolveRoot = () =>
   resolve(dirname(fromFileUrl(import.meta.url)), "../../");

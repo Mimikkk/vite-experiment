@@ -3,7 +3,7 @@ import { describe, it } from "jsr:@std/testing/bdd";
 import {
   createLibraryConfig,
   createLibraryResolver,
-} from "./libraries.configuration.ts";
+} from "./libraries.utils.ts";
 
 describe("Configuration - Library - resolver", () => {
   it("detect valid configuration paths for single library name", () => {

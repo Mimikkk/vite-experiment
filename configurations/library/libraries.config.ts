@@ -1,9 +1,9 @@
 import {
   createLibraryConfig,
   createLibraryResolver,
-} from "./libraries.configuration.ts";
+} from "./libraries.utils.ts";
 
-const config = createLibraryConfig({
+export const config = createLibraryConfig({
   libraries: {
     "@mimi/lib-a": "workspace/libs/lib-a/main.ts",
     "@mimi/lib-b": "workspace/libs/lib-b/main.ts",

@@ -2,5 +2,13 @@
     "name": "@mimi/lib-ab",
     "version": "0.0.1",
     "exports": "./main.ts",
-    "license": "MIT"
+    "license": "MIT",
+    "tasks": {
+        "build": "vite build"
+    },
+    "publish": {
+        "include": [
+            "main.ts"
+        ]
+    }
 }

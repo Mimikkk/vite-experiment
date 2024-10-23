@@ -1,6 +1,18 @@
 {
     "name": "@mimi/lib-ab",
     "version": "0.0.1",
-    "exports": "./build/main.ts",
-    "license": "MIT"
+    "exports": "./build/main.mjs",
+    "license": "MIT",
+    "tasks": {
+        "build": "vite build"
+    },
+    "publish": {
+        "include": [
+            "main.ts",
+            "build"
+        ],
+        "exclude": [
+            "!build"
+        ]
+    }
 }
