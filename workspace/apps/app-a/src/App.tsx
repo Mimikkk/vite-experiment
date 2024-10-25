@@ -1,7 +1,5 @@
+import { foo } from "@mimi/lib-a";
 import { foobar } from "@mimi/lib-ab";
+import { bar } from "@mimi/lib-b";
 
-export const App = () => {
-  function foo(a: number, b: number, c: number, d: number, e: number, f: number, g: number) {}
-
-  return <h1>Hello World + {foo()} + {foobar()}</h1>;
-};
+export const App = () => <h1>Hello World + {foo()} + {bar()} + {foobar()}</h1>;

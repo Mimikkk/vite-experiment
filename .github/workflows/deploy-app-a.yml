@@ -15,9 +15,13 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
-      - name: Setup Deployctl
-        run: deno install -gArf jsr:@deno/deployctl
       - name: Install Dependencies
         run: deno install --allow-scripts
-      - name: Deploy App A
-        run: deno task deploy --name app-a --prod
+      - name: Build App A
+        run: deno task build --name app-a
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: app-a
+          entrypoint: https://deno.land/std/http/file_server.ts
+          root: workspace/apps/app-a/build

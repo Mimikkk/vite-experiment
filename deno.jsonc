@@ -30,6 +30,6 @@
   "tasks": {
     "dev:app-a": "cd workspace/apps/app-a && deno task dev",
     "test": "deno test -A",
-    "deploy": "deno run -A scripts/deploy.ts"
+    "build": "deno run -A scripts/build.ts"
   }
 }

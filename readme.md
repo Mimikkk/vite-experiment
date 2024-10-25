@@ -47,7 +47,9 @@ the root directory contains tasks for running the development server and tests.
 
 Workflows are defined in the `.github/workflows` directory.
 
-- `Publish` - This workflow is triggered when a push to the `main` branch is made.
-  It publishes the libraries to the jsr registry.
-- `Test` - This workflow is triggered when a push to the `main` branch is made. It
-  runs the tests within the `workspace/libs` directory.
+- `Run tests` - This workflow is triggered when a push to the `main` branch is
+  made. It runs the tests within the `workspace/libs` directory.
+- `Publish libraries` - This workflow is triggered when a push to the `main`
+  branch is made. It publishes the libraries to the jsr registry.
+- `Deploy - App A` - This workflow is triggered when a push to the `main` branch
+  is made. It builds the application `app-a` and deploys it to Deno Deploy.
