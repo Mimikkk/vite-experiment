@@ -3,6 +3,12 @@
 This project is a demonstration of a monorepo structure using Deno as the
 runtime environment. The project includes multiple applications and libraries.
 
+- Deno Deploy - https://app-a.deno.dev/
+- JSR Registry
+  - https://jsr.io/@mimi/lib-a/
+  - https://jsr.io/@mimi/lib-b/
+  - https://jsr.io/@mimi/lib-ab/
+
 ## Project Structure
 
 The project is organized into a workspace with the following structure:
