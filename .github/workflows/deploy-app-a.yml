@@ -20,4 +20,4 @@ jobs:
       - name: Install Dependencies
         run: deno install --allow-scripts
       - name: Deploy App A
-        run: deno task deploy --name app-a
+        run: deno task deploy --name app-a --prod
