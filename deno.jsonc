@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "precompile",
+    "jsxImportSource": "solid-js",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext",
+      "deno.ns"
+    ]
+  },
+  "nodeModulesDir": "auto",
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "semiColons": true,
+    "include": ["scripts", "configurations", "workspace", "deno.jsonc"],
+    "exclude": ["workspace/libs/lib-a/build"]
+  },
+  "imports": {
+    "vite": "npm:vite@5.4.10",
+    "vite-plugin-dts": "npm:vite-plugin-dts@4.3.0"
+  },
+  "workspace": {
+    "members": [
+      "workspace/apps/app-a",
+      "workspace/libs/lib-a",
+      "workspace/libs/lib-b",
+      "workspace/libs/lib-ab"
+    ]
+  },
+  "tasks": {
+    "dev:app-a": "cd workspace/apps/app-a && deno task dev",
+    "test": "deno test -A",
+    "deploy": "deno run -A scripts/deploy.ts",
+    "publish": "deno publish"
+  }
+}

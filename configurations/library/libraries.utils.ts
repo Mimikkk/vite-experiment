@@ -1,16 +1,24 @@
-export interface LibraryConfig<LibraryName extends string> {
+export interface LibraryConfig<
+  LibraryName extends string,
+  ApplicationName extends string,
+> {
   libraries: Record<LibraryName, string>;
+  applications: Record<ApplicationName, string>;
   dependencies: Record<NoInfer<LibraryName>, NoInfer<LibraryName>[]>;
 }
 
-export const createLibraryConfig = <const LibraryName extends string>(
-  config: LibraryConfig<LibraryName>,
-): LibraryConfig<LibraryName> => {
-  return config;
-};
+export const createLibraryConfig = <
+  const LibraryName extends string,
+  const ApplicationName extends string,
+>(
+  config: LibraryConfig<LibraryName, ApplicationName>,
+): LibraryConfig<LibraryName, ApplicationName> => config;
 
-export const createLibraryResolver = <const LibraryName extends string>(
-  config: LibraryConfig<LibraryName>,
+export const createLibraryResolver = <
+  const LibraryName extends string,
+  const ApplicationName extends string,
+>(
+  config: LibraryConfig<LibraryName, ApplicationName>,
 ) => {
   const path = (library: LibraryName): string => config.libraries[library];
 
@@ -65,10 +73,7 @@ export const createLibraryResolver = <const LibraryName extends string>(
     return graph;
   };
 
-  return {
-    dependencies,
-    paths,
-    visualize,
-    path,
-  };
+  const entry = (library: LibraryName): string => path(library) + "/src/mod.ts";
+
+  return { dependencies, paths, visualize, path, entry };
 };

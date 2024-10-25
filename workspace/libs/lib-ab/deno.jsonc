@@ -1,0 +1,14 @@
+{
+  "name": "@mimi/lib-ab",
+  "version": "0.0.1",
+  "exports": "./src/mod.ts",
+  "license": "MIT",
+  "tasks": {
+    "build": "vite build"
+  },
+  "publish": {
+    "include": [
+      "src"
+    ]
+  }
+}

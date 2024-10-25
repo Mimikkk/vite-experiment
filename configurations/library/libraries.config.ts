@@ -1,13 +1,13 @@
-import {
-  createLibraryConfig,
-  createLibraryResolver,
-} from "./libraries.utils.ts";
+import { createLibraryConfig, createLibraryResolver } from "./libraries.utils.ts";
 
 export const config = createLibraryConfig({
+  applications: {
+    "app-a": "workspace/apps/app-a",
+  },
   libraries: {
-    "@mimi/lib-a": "workspace/libs/lib-a/main.ts",
-    "@mimi/lib-b": "workspace/libs/lib-b/main.ts",
-    "@mimi/lib-ab": "workspace/libs/lib-ab/main.ts",
+    "@mimi/lib-a": "workspace/libs/lib-a",
+    "@mimi/lib-b": "workspace/libs/lib-b",
+    "@mimi/lib-ab": "workspace/libs/lib-ab",
   },
   dependencies: {
     "@mimi/lib-a": [],
@@ -16,7 +16,6 @@ export const config = createLibraryConfig({
   },
 });
 
+export type ApplicationName = keyof typeof config.applications;
 export type LibraryName = keyof typeof config.libraries;
-export const { dependencies, paths, visualize, path } = createLibraryResolver(
-  config,
-);
+export const { dependencies, paths, visualize, path, entry } = createLibraryResolver(config);

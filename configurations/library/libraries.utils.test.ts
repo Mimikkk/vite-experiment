@@ -1,13 +1,11 @@
 import { expect } from "jsr:@std/expect";
 import { describe, it } from "jsr:@std/testing/bdd";
-import {
-  createLibraryConfig,
-  createLibraryResolver,
-} from "./libraries.utils.ts";
+import { createLibraryConfig, createLibraryResolver } from "./libraries.utils.ts";
 
 describe("Configuration - Library - resolver", () => {
   it("detect valid configuration paths for single library name", () => {
     const config = createLibraryConfig({
+      applications: {},
       libraries: {
         "lib-a": "path/to/lib-a",
         "lib-b": "path/to/lib-b",
@@ -34,6 +32,7 @@ describe("Configuration - Library - resolver", () => {
 
   it("detect valid configuration paths for multiple library names", () => {
     const config = createLibraryConfig({
+      applications: {},
       libraries: {
         "lib-a": "path/to/lib-a",
         "lib-b": "path/to/lib-b",
@@ -59,6 +58,7 @@ describe("Configuration - Library - resolver", () => {
 
   it("detect circular dependency", () => {
     const config = createLibraryConfig({
+      applications: {},
       libraries: {
         "lib-x": "path/to/lib-x",
         "lib-y": "path/to/lib-y",
@@ -80,6 +80,7 @@ describe("Configuration - Library - resolver", () => {
 
   it("visualize library graph", () => {
     const config = createLibraryConfig({
+      applications: {},
       libraries: {
         "lib-a": "path/to/lib-a",
         "lib-b": "path/to/lib-b",

@@ -8,22 +8,19 @@ runtime environment. The project includes multiple applications and libraries.
 The project is organized into a workspace with the following structure:
 
 - `workspace/`
-  - `apps/`
-    - `examples/` (Main application)
-  - `libs/`
+  - `apps/` - Applications
+    - `app-a/`
+  - `libs/` - Libraries
     - `lib-a/`
     - `lib-b/`
     - `lib-ab/`
 
-## Main Application
+## Applications
 
-The main application is located in the `workspace/apps/examples` directory. It
-uses Solid.js as the frontend framework and Vite for building and development.
+The project includes single application in the `workspace/apps` directory:
 
-### Key Files
-
-1. `deno.json`: Configuration file for Deno tasks and imports.
-2. `vite.config.ts`: Vite configuration file.
+- `app-a`: It uses Solid.js as the frontend framework and Vite for building and
+  development. It is deployed to the deployctl via `deno task deploy`.
 
 ## Libraries
 
@@ -31,38 +28,17 @@ The project includes several libraries in the `workspace/libs/` directory:
 
 1. `lib-a`: A library with its own `vite.config.ts` and `main.ts`.
 2. `lib-b`: Another library with similar structure to `lib-a`.
-3. `lib-ab`: A library with only a `deno.json` file.
+3. `lib-ab`: A library with only a `deno.jsonc` file.
 
 ## Build and Development
 
-The project uses Vite for building and development. The main `deno.json` file in
-the root directory contains tasks for running the development server and tests:
-
-```json
-"tasks": {
-  "dev": "cd workspace/apps/examples && deno task dev",
-  "test": "deno test -A --watch"
-}
-```
+The project uses Vite for building and development. The main `deno.jsonc` file in
+the root directory contains tasks for running the development server and tests.
 
 ## Configuration
 
-1. The root `deno.json` file configures the Deno environment, including compiler
+1. The root `deno.jsonc` file configures the Deno environment, including compiler
    options, formatting, and workspace structure.
 
 2. Each library and the main application have their own configuration files
-   (`deno.json` or `vite.config.ts`) for specific settings.
-
-## Development Workflow
-
-To start the development server:
-
-```bash
-deno task dev
-```
-
-To run tests:
-
-```bash
-deno task test
-```
+   (`deno.jsonc` or `vite.config.ts`) for specific settings.
