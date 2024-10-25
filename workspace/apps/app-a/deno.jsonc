@@ -10,15 +10,6 @@
   "imports": {
     "vite": "npm:vite@5.4.10",
     "solid-js": "npm:solid-js@1.9.1",
-    "vite-plugin-solid": "npm:vite-plugin-solid@2.1.0",
-    "lodash": "npm:lodash@4.17.21"
-  },
-  "deploy": {
-    "project": "5ac4ad28-3ac2-4b10-8a98-9704f4863c30",
-    "exclude": [
-      "**/node_modules"
-    ],
-    "include": [],
-    "entrypoint": "jsr:@std/http/file-server"
+    "vite-plugin-solid": "npm:vite-plugin-solid@2.1.0"
   }
 }
