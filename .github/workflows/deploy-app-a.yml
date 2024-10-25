@@ -2,12 +2,10 @@ name: Deploy - App A
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
 permissions:
   contents: read
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Repo
