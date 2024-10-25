@@ -1,4 +1,5 @@
 {
+  "license": "MIT",
   "compilerOptions": {
     "strict": true,
     "jsx": "precompile",
@@ -18,10 +19,6 @@
     "include": ["scripts", "configurations", "workspace", "deno.jsonc"],
     "exclude": ["workspace/libs/lib-a/build"]
   },
-  "imports": {
-    "vite": "npm:vite@5.4.10",
-    "vite-plugin-dts": "npm:vite-plugin-dts@4.3.0"
-  },
   "workspace": {
     "members": [
       "workspace/apps/app-a",
@@ -33,7 +30,6 @@
   "tasks": {
     "dev:app-a": "cd workspace/apps/app-a && deno task dev",
     "test": "deno test -A",
-    "deploy": "deno run -A scripts/deploy.ts",
-    "publish": "deno publish"
+    "deploy": "deno run -A scripts/deploy.ts"
   }
 }

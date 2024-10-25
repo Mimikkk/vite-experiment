@@ -42,3 +42,12 @@ the root directory contains tasks for running the development server and tests.
 
 2. Each library and the main application have their own configuration files
    (`deno.jsonc` or `vite.config.ts`) for specific settings.
+
+## Workflows
+
+Workflows are defined in the `.github/workflows` directory.
+
+- `Publish` - This workflow is triggered when a push to the `main` branch is made.
+  It publishes the libraries to the jsr registry.
+- `Test` - This workflow is triggered when a push to the `main` branch is made. It
+  runs the tests within the `workspace/libs` directory.
