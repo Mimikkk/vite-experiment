@@ -16,7 +16,7 @@ jobs:
         with:
           deno-version: v2.x
       - name: Setup Deployctl
-        uses: deno install -gArf jsr:@deno/deployctl
+        run: deno install -gArf jsr:@deno/deployctl
       - name: Install Dependencies
         run: deno install --allow-scripts
       - name: Deploy App A
